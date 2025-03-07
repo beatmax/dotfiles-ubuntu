@@ -1,0 +1,13 @@
+https://wiki.haskell.org/Xmonad/Using_xmonad_in_XFCE 
+  - at bottom: Debian Wheezy
+  - same xmonad.hs from manjaro
+
+disable xfdesktop:
+  session and startup -> current session -> xfdesktop ->
+    change restart style: immediately -> never
+  https://feeblenerd.blogspot.com/2015/11/pretty-i3-with-xfce.html?m=1
+
+whisker menu:
+  https://www.debugpoint.com/xfce-whisker-menu/
+
+screensaver settings: disable screensaver and lock screen

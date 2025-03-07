@@ -1,0 +1,7 @@
+xfce4
+xfce4-goodies
+xmonad
+libghc-xmonad-contrib-dev
+suckless-tools
+nitrogen
+xcompmgr
