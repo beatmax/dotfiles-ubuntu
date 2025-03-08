@@ -1,0 +1,14 @@
+build-essential
+fzf
+htop
+iotop
+ncdu
+nmap
+nnn
+pass
+python3-venv
+redshift
+ripgrep
+tig
+tmux
+xclip
