@@ -1,0 +1,160 @@
+TODO
+----
+* toggle virtual text: lua vim.diagnostic.config({virtual_text = false}) 
+
+https://github.com/Civitasv/cmake-tools.nvim
+or
+https://github.com/Shatur/neovim-tasks
+(what does lunarvim use?)
+
+- <spc>h*  -> hunk preview/stage/... (instead of horizontal terminal)
+- Telescope git_files
+- Telescope git_bcommits   !!! commits current buffer
+                           !!! nice options: :help telescope.builtin.git_bcommits()
+- Telescope git_bcommits_range
+- Telescope git_branches
+- Telescope resume         -- Opens the previous picker in the identical state (incl. multi selections) 
+- Telescope man_pages sections=ALL
+- Telescope keymaps
+- Telescope spell_suggest
+- Telescope tagstack
+- Telescope jumplist
+- Telescope lsp_incoming_calls, etc...
+
+---
+
+Config based on:
+  https://github.com/dreamsofcode-io/neovim-cpp
+  https://youtu.be/lsFoZIg-oDs?si=ZKd0egr8V9GS9XF6
+
+<leader>th         - themes
+<leader>b          - new buffer
+<leader>x          - close buffer
+tab, s-tab
+<esc>              - clear highlights
+ci[                - change inside [...]  (text objects: https://neovim.io/doc/user/motion.html#text-objects)
+<C-g>              - show file path (relative), line, column
+1<C-g>             - show file path (absolute), line, column
+g C-g              - show extended cursor position
+
+:tabnew            - create tab
+gt                 - go to next tab
+gT                 - go to previous tab
+<n>gt              - go to tab <n>
+g<Tab>             - go to the last accessed tab page
+:tabe %            - edit (current) file in new tab (':tab split' confuses nvchad)
+
+<C-f>              - page down
+<C-b>              - page up  (TODO: find buffers!!)
+<C-d>              - half page down
+<C-u>              - half page up
+H                  - top of the window
+M                  - middle of the window
+L                  - bottom of the window
+
+NvChadUpdate
+lua: https://nvchad.com/docs/quickstart/learn-lua
+example config: https://github.com/NvChad/example_config/blob/v2.0/chadrc.lua
+awesome neovim: https://github.com/rockerBOO/awesome-neovim
+https://neovimcraft.com/
+
+insert mode: c-e/j/h/k/b/l
+
+telescope:
+C-q   - results to quickfix
+C-c   - close telescope
+
+quickfix:
+bqf (better quickfix): https://www.youtube.com/watch?v=NJDu_53T_4M&t=212s
+https://www.reddit.com/r/neovim/comments/wqh2rn/strategies_using_the_quickfix_list/
+
+Neogit:
+ :Neogit <popup>  -- (branch, cherry_pick, revert, rebase, commit, reset, ... - see help)
+ <spc>gg
+ ll                     -- log
+   :Neogit revert, etc  -- for commit under cursor
+ TODO: https://medium.com/linux-with-michael/my-neovim-git-setup-ba918d261cb6
+       open in split instead of tab?
+
+Diffview (<spc>gd):
+ <spc>gc   -- close
+ <spc>b    -- toggle file panel
+ o         -- open file
+ g?        -- help
+
+Conflicts (in diffview):
+ https://github.com/sindrets/diffview.nvim?tab=readme-ov-file
+ g<C-x>    -- cycle layouts
+ [x, ]x    -- prev/next conflict
+ :diffthis -- switch on diff, current window
+ :diffoff  -- switch off diff mode, current window
+ :diffoff! -- switch off diff mode, all windows in tab
+ TODO: try https://github.com/samoshkin/vim-mergetool
+
+DiffviewFileHistory (<spc>gh / <spc>gf):
+ L         -- commit details
+ y         -- copy hash
+
+In telescope document/workspace symbols:
+ <C-l>     -- prefilter query autocompletion
+              (for workspace symbols: only after search and <C-space>)
+
+nvim-gdb:
+ <Leader>dd  -- start gdb
+ <Leader>dp  -- start pdb (python)
+ <Leader>dr  -- rr replay
+ <F8>        -- toggle breakpoint
+ <F4>        -- until
+ <F5>        -- continue
+ <F10>       -- next
+ <F11>       -- step
+ <F12>       -- finish
+
+Rust debugging:
+  <Leader>db         -- toggle breakpoint
+  :RustDebuggables
+  ... TODO ...
+
+surround:
+ S{char} (visual)   -- surround selection
+ ys{motion}{char}   -- add surround
+ ds{char}           -- delete surround
+ cs{from}{to}       -- change surround
+
+spell:
+  (from https://vimtricks.com/p/vim-spell-check/)
+  :set spell – Turn on spell checking
+  :set nospell – Turn off spell checking
+  ]s – Jump to the next misspelled word
+  [s – Jump to the previous misspelled word
+  z= – Bring up the suggested replacements
+  zg – Good word: Add the word under the cursor to the dictionary
+  zw – Woops! Undo and remove the word from the dictionary
+
+GhostText (firefox):
+  :GhostTextStart
+  in firefox: <C-e>
+
+vim-better-whitespace:
+  :StripWhitespace
+
+Registers:
+  :reg             -- list registers
+  q<x>q            -- trick to clear register <x>
+  :wshada!         -- persist change
+
+Interesting plugins:
+https://github.com/ray-x/navigator.lua
+https://github.com/RishabhRD/nvim-lsputils
+
+Interesting setups:
+https://codeberg.org/j4de/nvim
+https://medium.com/linux-with-michael/my-neovim-git-setup-ba918d261cb6
+https://www.lunarvim.org/
+https://github.com/LazyVim/LazyVim
+
+Python:
+(need to install npm on machine?)
+install nvm: https://github.com/nvm-sh/nvm   -- because we need recent version of 'node'
+nvm install --lts
+:Mason -> install pyright

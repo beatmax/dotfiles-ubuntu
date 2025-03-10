@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export WORKAROUND_VIMDIFF=1
+exec nvim -d "$@"
