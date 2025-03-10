@@ -1,0 +1,8 @@
+Add to .bashrc:
+
+# local
+if [[ -d ~/.bashrc.d ]]; then
+  for i in ~/.bashrc.d/*.sh; do
+    . "$i"
+  done
+fi
