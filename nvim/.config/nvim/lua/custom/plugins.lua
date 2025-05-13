@@ -115,6 +115,7 @@ local plugins = {
       ensure_installed = {
         "clangd",
         "clang-format",
+        "lua-language-server",
         -- TODO, see NOTES
         -- "pyright",
         "rust-analyzer",

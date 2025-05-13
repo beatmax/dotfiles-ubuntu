@@ -38,6 +38,11 @@ M.ui = {
     -- workaround for https://github.com/neovim/neovim/issues/9800
     CursorLine = { ctermfg = "White" },
   },
+  hl_override = {
+    -- fix too dark comments
+    Comment = { fg="#999999" },
+    ["@comment"] = { fg="#999999" },
+  },
 }
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
