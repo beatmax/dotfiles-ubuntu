@@ -65,13 +65,12 @@ M.general = {
   n = {
      ["Zz"] = {"<cmd> qa <CR>", "Quit all"},
      -- ["<leader>k"] = {"<cmd> wa <CR> <cmd> make <CR>", "Write all and make"},
-     -- ["<leader>k"] = {"<cmd> wa <CR> <cmd> CMakeBuild <CR>", "Write all and make"},
      ["<leader>k"] = {
       function ()
         vim.cmd("wa")
-        vim.cmd("CMakeBuild --target install")
+        vim.cmd("CMakeBuild")
       end,
-      "Write all and make"},
+      "Write all and build"},
      ["<leader>ts"] = {"<cmd> windo set spell! <CR>", "Toggle spell checking (all windows)"},
      ["<leader>wr"] = {"<cmd> windo set wrap! <CR>", "Toggle wrap (all windows)"},
   },
