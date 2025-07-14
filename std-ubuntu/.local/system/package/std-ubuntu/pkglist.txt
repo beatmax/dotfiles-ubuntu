@@ -1,4 +1,5 @@
 build-essential
+fonts-noto
 fzf
 htop
 iotop

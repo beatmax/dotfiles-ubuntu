@@ -1,7 +1,7 @@
 alias lt='ls -ltrah'
 
 alias v='nvim'
-alias vd='vimdiff'
+alias vd='nvim -d'
 alias vw='nvim -R'
 
 alias xo=xdg-open

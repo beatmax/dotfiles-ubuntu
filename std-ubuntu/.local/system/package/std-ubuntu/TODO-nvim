@@ -1,5 +1,5 @@
-nvim: download tgz from https://neovim.io/, extract to ~/local/nvim-linux64
+nvim: download tgz from https://neovim.io/, extract to ~/local/nvim-linux64-x86_64
       (added to PATH in ~/.bashrc.d/nvim.sh)
-nvchad pre-requisites: https://nvchad.com/docs/quickstart/install
+config: https://github.com/beatmax/nvim-config
 install nerd fonts: https://gist.github.com/matthewjberger/7dd7e079f282f8138a9dc3b045ebefa0
 configure terminal to use 'JetbrainsMono Nerd Font'
