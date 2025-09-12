@@ -1,5 +1,10 @@
+First, switch to xfce4:
+  sudo update-alternatives --config x-session-manager
+  -> /usr/bin/xfce4-session
+
 https://wiki.haskell.org/Xmonad/Using_xmonad_in_XFCE 
   - at bottom: Debian Wheezy
+    settings manager: run xfce4-settings-manager
   - same xmonad.hs from manjaro
 
 disable xfdesktop:

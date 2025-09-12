@@ -13,3 +13,4 @@ ripgrep
 tig
 tmux
 xclip
+xdg-utils
