@@ -2,11 +2,8 @@
 
 sleep 1
 
-# Merge in X11 settings.
 [[ -f $HOME/.Xresources ]] && xrdb -merge -I$HOME $HOME/.Xresources
-
-resolution=$(xdpyinfo | awk '/dimensions/{print $2}')
-[[ -f $HOME/.Xresources-$resolution ]] && xrdb -merge -I$HOME $HOME/.Xresources-$resolution
+~/.local/bin/setdpi
 
 tries=5
 while ! nitrogen --restore && ((--tries)); do

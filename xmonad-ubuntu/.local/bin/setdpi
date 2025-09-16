@@ -1,0 +1,4 @@
+#!/bin/bash
+
+resolution=$(xdpyinfo | awk '/dimensions/{print $2}')
+[[ -f $HOME/.Xresources-$resolution ]] && xrdb -merge -I$HOME $HOME/.Xresources-$resolution
