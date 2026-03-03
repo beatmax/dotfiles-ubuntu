@@ -20,4 +20,4 @@ for p in $packages; do
 done
 
 cd "$DIR"
-stow $packages
+stow --no-folding $packages
