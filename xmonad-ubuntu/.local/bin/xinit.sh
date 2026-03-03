@@ -11,7 +11,7 @@ while ! nitrogen --restore && ((--tries)); do
   sleep 1
 done
 
-xcompmgr -c &
+picom &
 
 # keyboard layout, compose key combinations, etc:
 # https://dry.sailingissues.com/us-international-keyboard-layout.html
