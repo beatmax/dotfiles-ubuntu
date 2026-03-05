@@ -3,7 +3,7 @@
 sleep 1
 
 [[ -f $HOME/.Xresources ]] && xrdb -merge -I$HOME $HOME/.Xresources
-~/.local/bin/setdpi
+~/.local/bin/setdpi --init
 
 tries=5
 while ! nitrogen --restore && ((--tries)); do

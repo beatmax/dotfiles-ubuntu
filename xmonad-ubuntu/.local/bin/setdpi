@@ -3,4 +3,9 @@
 resolution=$(xdpyinfo | awk '/dimensions/{print $2}')
 [[ -f $HOME/.Xresources-$resolution ]] && xrdb -merge -I$HOME $HOME/.Xresources-$resolution
 
-nitrogen --restore
+if [[ "$1" = "--init" ]]; then
+  exit 0
+fi
+
+xfconf-query -c xsettings -n -t int -p "/Xft/DPI" -s $(xrdb -get Xft.dpi)
+nitrogen --restore 2> /dev/null || echo 'Failed: nitrogen --restore'

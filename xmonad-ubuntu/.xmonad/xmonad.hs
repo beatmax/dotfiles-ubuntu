@@ -10,6 +10,8 @@ myManagementHooks = [
   , className =? "Vncviewer" --> doFloat
   ]
 
+myModMask = mod1Mask
+
 main = do
   xmonad $ ewmhFullscreen xfceConfig
       {
@@ -19,13 +21,14 @@ main = do
           <+> composeAll myManagementHooks
       , terminal = "xfce4-terminal --hide-menubar --hide-scrollbar"
       , borderWidth = 2
-      , normalBorderColor = "#282a36"
+      , normalBorderColor = "#584a56"
       , focusedBorderColor = "#9b71d7"
+      , modMask = myModMask
       } `removeKeys`
       [
-        (mod1Mask, xK_b)
+        (myModMask, xK_b)
       ] `additionalKeys`
       [
-        ((mod1Mask .|. shiftMask, xK_b), sendMessage ToggleStruts)
-      , ((mod1Mask .|. shiftMask, xK_l), spawn "slock")
+        ((myModMask .|. shiftMask, xK_b), sendMessage ToggleStruts)
+      , ((myModMask .|. shiftMask, xK_l), spawn "slock")
       ]

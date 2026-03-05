@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+src="$HOME/dotfiles/xmonad-ubuntu/.xmonad/xmonad.hs"
+
+n=5
+if grep -q "^myModMask = mod${n}Mask" "$src"; then
+  n=1
+fi
+sed -i "s/^myModMask = mod.Mask/myModMask = mod${n}Mask/" "$src"
+xmonad --recompile
+xmonad --restart
+
+echo "Set myModMask = mod${n}Mask"
