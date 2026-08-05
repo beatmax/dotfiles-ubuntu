@@ -4,6 +4,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Spacing
 import XMonad.Util.EZConfig
+import qualified XMonad.StackSet as W
 
 myManagementHooks = [
   className =? "Gimp"      --> doFloat
@@ -11,6 +12,8 @@ myManagementHooks = [
   ]
 
 myModMask = mod1Mask
+
+myWorkspaces = map show [1..9] ++ ["0"]
 
 main = do
   xmonad $ ewmhFullscreen xfceConfig
@@ -24,6 +27,7 @@ main = do
       , normalBorderColor = "#584a56"
       , focusedBorderColor = "#9b71d7"
       , modMask = myModMask
+      , workspaces = myWorkspaces
       } `removeKeys`
       [
         (myModMask, xK_b)
@@ -31,4 +35,6 @@ main = do
       [
         ((myModMask .|. shiftMask, xK_b), sendMessage ToggleStruts)
       , ((myModMask .|. shiftMask, xK_l), spawn "slock")
+      , ((myModMask, xK_0), windows $ W.greedyView "0")
+      , ((myModMask .|. shiftMask, xK_0), windows $ W.shift "0")
       ]
